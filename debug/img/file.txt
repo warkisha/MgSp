@@ -1,0 +1,3 @@
+Хэш SHA1 C:\Project\mGGp\build\img\img.jpg:
+8fa5a022c3d6c5d46ae0c5135f23708df3818c32
+CertUtil: -hashfile — команда успешно выполнена.
