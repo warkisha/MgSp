@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>EventLog</class>
+ <widget class="QDialog" name="EventLog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>750</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+font: 600 11pt &quot;Segoe UI Variable Display Semib&quot;;</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="psw_groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>Изменить пароль учетной записи</string>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>471</width>
+          <height>263</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>ваш пароль</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>новый пароль</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>повторите новый пароль</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="psw_lineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 3px solid rgb(85, 170, 255);
+border-radius: 25;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="pswNew_lineEdit">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 3px solid rgb(85, 170, 255);
+border-radius: 25;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="lineEdit_5">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border: 3px solid rgb(85, 170, 255);
+border-radius: 25;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="deletMainAc_Button_3">
+           <property name="minimumSize">
+            <size>
+             <width>65</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(0, 0, 0);
+border-radius:25px;
+border:2px solid rgb(255, 0, 0);
+
+font: 600 8pt &quot;Segoe UI Variable Display Semib&quot;;
+</string>
+           </property>
+           <property name="text">
+            <string>смотреть</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="error_label">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="change_MainAc_Button_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>360</y>
+          <width>221</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:rgb(0, 0, 0);
+border-radius:18px;
+border:2px solid rgb(255, 0, 0)
+</string>
+        </property>
+        <property name="text">
+         <string>Изменит</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="closeChangePsw_Button">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>360</y>
+          <width>211</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:18px;
+background: 6px solid rgb(33, 32, 66);</string>
+        </property>
+        <property name="text">
+         <string>Отмена</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="minimumSize">
+        <size>
+         <width>900</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="title">
+        <string>настройки</string>
+       </property>
+       <widget class="QWidget" name="verticalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>70</x>
+          <y>70</y>
+          <width>502</width>
+          <height>401</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="deletMainAc_Button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(170, 0, 0);
+border-radius:18px;
+</string>
+           </property>
+           <property name="text">
+            <string>Удалить аккаунт</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="changeMain_Button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color:rgb(0, 0, 0);
+color:rgb(225, 225, 225);
+
+border:2px solid rgb(170, 0, 0);
+border-radius:18px;
+
+</string>
+           </property>
+           <property name="text">
+            <string>изменить пароль от аккаунта</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="closeSetting_Button">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(33, 32, 66);</string>
+           </property>
+           <property name="text">
+            <string>закрыть</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextBrowser" name="textBrowser">
+       <property name="styleSheet">
+        <string notr="true">font: 600 9pt &quot;Segoe UI Variable Display Semib&quot;;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="topMargin">
+        <number>150</number>
+       </property>
+       <property name="bottomMargin">
+        <number>150</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="name_label">
+         <property name="styleSheet">
+          <string notr="true">color: transfert</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="setting_pushButton">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(33, 32, 66);</string>
+         </property>
+         <property name="text">
+          <string>настройки</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(170, 0, 0);
+</string>
+         </property>
+         <property name="text">
+          <string>выйти</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

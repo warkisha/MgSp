@@ -1,0 +1,85 @@
+#include "LogIn/LogIn.h"
+#include "ui_LogIn.h"
+
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+    , ui(new Ui::MainWindow)
+{
+    ui->setupUi(this);
+    QPixmap px1 ("./img/login.jpg");
+    ui->background_label->setPixmap (px1);
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+
+void MainWindow::on_create_Button_clicked()
+{
+
+    QString tableName = "all users.db";
+    DataBase Table;
+    Table.connectDB(tableName);
+    regist = new Registration;
+    regist->show();
+    close();
+}
+
+
+void MainWindow::on_signIn_Button_clicked()
+{
+    QString nameUser = ui->name_lineEdit->text();
+    QString pswUser = ui->pswd_lineEdit->text();
+    QString ColumName = "name";
+    QString ColumPsw = "psw";
+    QString DBname = "all users.db";
+    QString tableName = "users";
+    DataBase Data;
+    Data.connectDB(DBname);
+    QString result;
+    QString time = QDateTime::currentDateTime().toString("dd.MM.yyyy HH:mm:ss");
+    QString nameFile = Data.GetDataFromDB(ColumName, tableName, nameUser);
+    qDebug() <<"data: " << nameFile;
+    if((nameFile == nameUser) && (!(nameFile == ""))){
+        //тут вставить дешифровывание пароля с помощью ключа из файла на токене
+
+        QString pswFile = Data.GetDataFromDB(ColumPsw, tableName, pswUser);
+        if((pswUser == pswFile) && (!(pswFile == ""))){
+            dialog = new Dialog;
+            dialog->show();
+            result = "Удачная попытка входа под именем:  " + nameUser + "  время и дата попытки" + time + "\r\n";
+            close();
+        }
+        else{
+            QPixmap px2 ("./img/redLogin.jpg");
+            ui->background_label->setPixmap (px2);
+            ui->error_label->setText("Пользователя с таким именем или паролем не сущесвует, попробуйте еще раз или зарегестрируйтесь  ");
+            result = "НЕУДАЧНАЯ попытка входа под именем:  " + nameUser + "  время и дата попытки" + time + "\r\n";
+        }
+    }
+    else{
+        QPixmap px2 ("./img/redLogin.jpg");
+        ui->background_label->setPixmap (px2);
+        ui->error_label->setText("Пользователя с таким именем или паролем не сущесвует, попробуйте еще раз ");
+        result = "НЕУДАЧНАЯ попытка входа под именем:   " + nameUser + "  время и дата попытки" + time + "\r\n";
+    }
+    Data.closeDB(DBname);
+
+    QFile file("the event log.txt");
+
+    if ((file.open(QIODevice::Append))){
+        QTextStream stream(&file);
+        stream << result;
+        file.flush();
+        file.close();
+        if (stream.status() != QTextStream::Ok){
+            qDebug() << "Ошибка записи файла";
+        }
+    }
+
+
+}
+
